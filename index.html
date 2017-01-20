@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .messageRed { color:red}
+      .messageGreen { color:green }
+      .textBorderRed {  border: 1px solid red; }
+      .textBorderGreen { border: 1px solid green;}
     </style>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
@@ -15,16 +19,16 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
-             <input  ng-model="menu" id="lunch-menu" type="text"
+             <div class="{{textClass}}"><input ng-model="menu" id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control"  >
+             class="form-control"  ></div>
          </div>
          <div class="form-group">
              <button  ng-click="checkLunch()" class="btn btn-default">Check If Too Much</button>
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
-            {{message}}
+            <div class="{{messageClass}}">{{message}}</div>
          </div>
    </div>
 

@@ -13,7 +13,7 @@ angular.module('LunchCheck',[])
       if($scope.menu!=undefined&&!$scope.menu.isEmpty()){
         var count = 0;
         var elements = $scope.menu.split(",");
-        for(var i=0; i<elements.length;i++){
+        for(var i=0; i<elements.length; i++){
           if(!elements[i].isEmpty()){
             count++;
           }
@@ -23,8 +23,12 @@ angular.module('LunchCheck',[])
         }else{
           $scope.message = "Too much!";
         }
+        $scope.messageClass="messageGreen";
+        $scope.textClass="textBorderGreen";
       }else{
          $scope.message = "Please enter data first";
+         $scope.messageClass="messageRed";
+         $scope.textClass="textBorderRed";
       }
     }
   }
